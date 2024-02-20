@@ -39,7 +39,7 @@ public class List {
         Node current = this.first;
         StringBuilder s = new StringBuilder();
         for (int i = 0; i < this.size; i++) {
-            s.append(current.toString());
+            s.append(current + " ");
             current = current.next;
         }
         return s.toString();
