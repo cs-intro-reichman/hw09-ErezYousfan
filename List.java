@@ -37,12 +37,13 @@ public class List {
     /** GIVE Textual representation of this list. */
     public String toString() {
         Node current = this.first;
-        StringBuilder s = new StringBuilder();
+        String s = "";
         for (int i = 0; i < this.size; i++) {
-            s.append(current + " ");
+            s += current + " ";
             current = current.next;
         }
-        return s.toString();
+        s.substring(0, s.length()-1);
+        return s;
     }
     /** GIVE Returns the size of the string of which the list is based on */
     public int sizeOfString() {
