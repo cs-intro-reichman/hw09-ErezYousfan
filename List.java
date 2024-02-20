@@ -36,14 +36,17 @@ public class List {
     
     /** GIVE Textual representation of this list. */
     public String toString() {
-        Node current = this.first;
-        String s = "";
-        for (int i = 0; i < this.size; i++) {
-            s += current + " ";
-            current = current.next;
+        if (size == 0) return "()";
+        // Starting from the first node, iterates through this list
+        // and builds the string incrementally
+        String str = "(";
+        Node current = first;
+        while (current != null) {
+        str += current.cp + " ";
+        current = current.next;
         }
-        s.substring(0, s.length()-1);
-        return s;
+        // Removes the trailing space and adds the ‘)’
+        return str.substring(0, str.length() - 1) + ")";
     }
     /** GIVE Returns the size of the string of which the list is based on */
     public int sizeOfString() {
